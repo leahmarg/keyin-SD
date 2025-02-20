@@ -1,0 +1,72 @@
+/* Computer History Website Styling */
+body {
+    background-color: #67aee7;  /* Blue background */
+    font-family: Arial, sans-serif;
+    color: #1a2530;  /* Dark blue text */
+    margin: 0;
+    padding: 0;
+}
+
+/* Box Styling */
+.box {
+    width: 1000px;
+    margin: 50px auto;
+    background-color: #ffffff;  /* White background for the box */
+    border: 2px solid #cccccc;  /* Border */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Light shadow for a subtle effect */
+}
+
+/* Heading Styles */
+h1, h2, h3 {
+    color: #1a2e34;  /* Dark blue-green color for headings */
+    font-family: 'Lucida Console', Monaco, monospace;
+    margin-bottom: 10px;
+}
+
+/* Text Styling */
+p {
+    line-height: 1.6;
+    font-size: 16px;
+    color: #555555;  /* Lighter grey text for paragraphs */
+}
+
+/* List Styling */
+ul, ol {
+    padding-left: 20px;
+}
+
+li {
+    font-size: 16px;
+}
+
+/* Link Styling */
+a {
+    color: #3498db;  /* Blue color for links */
+    text-decoration: none;  /* No underline */
+}
+
+a:visited {
+    color: #2980b9;  /* Darker blue when visited */
+}
+
+a:hover {
+    color: #ff00dd;  /* Pink color on hover for links */
+    text-decoration: underline;
+}
+
+/* Class Styles */
+.class1 {
+    color: #e67e22;  /* Orange color */
+    font-weight: bold;
+}
+
+.class2 {
+    font-style: italic;
+    color: #2ecc71;  /* Green color */
+}
+
+.class3 {
+    text-decoration: underline;
+    color: #9b59b6;  /* Purple color */
+}
