@@ -1,0 +1,195 @@
+/* Computer History Website Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: rgb(0, 0, 0);
+    font-family: Arial, sans-serif;
+  }
+  
+  html,
+  body {
+    min-height: 100dvh;
+  }
+  
+  body {
+    background-color: rgb(50, 191, 226);
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+  }
+  
+  header {
+    text-align: center;
+    padding: 1.5rem;
+    font-weight: bold;
+    color: rgb(35, 110, 153);
+  }
+  
+  /* nav styling */
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: rgb(255, 255, 255);
+    color: white;
+    border: 2px solid #cccccc; /* Border */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for a subtle effect */
+  }
+  
+  /* Heading Styles */
+  h1,
+  h2,
+  h3 {
+    color: #1a2e34; /* Dark blue-green color for headings */
+    font-family: "Lucida Console", Monaco, monospace;
+    margin-bottom: 10px;
+  }
+  
+  /* Text Styling */
+  p {
+    line-height: 1.6;
+    font-size: 16px;
+    color: #555555; /* Lighter grey text for paragraphs */
+  }
+  
+  /* List Styling */
+  ul,
+  ol {
+    padding-left: 20px;
+  }
+  
+  li {
+    font-size: 16px;
+  }
+  
+  /* Link Styling */
+  a {
+    color: #3498db; /* Blue color for links */
+    text-decoration: none; /* No underline */
+  }
+  
+  a:visited {
+    color: #740091; /* Darker blue when visited */
+  }
+  
+  a:hover {
+    color: #ff00dd; /* Pink color on hover for links */
+    text-decoration: underline;
+  }
+  
+  /* Centering ordered list */
+  #top-brands {
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+    list-style-position: inside;
+    padding: 1rem;
+  }
+  
+  /* Mainbox wrapper */
+  #content-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+    max-width: 1000px;
+    padding: 1rem;
+    background-color: white;
+    border: 0.125rem solid #1a2e34;
+  }
+  
+  .textbox {
+    text-align: left;
+    padding: 10px;
+  }
+  
+  #center-img {
+    display: flex;
+    justify-content: center;
+    min-width: 600px;
+    padding: 2rem;
+  }
+  
+  .img-row {
+    display: table;
+    border-collapse: collapse;
+    width: 100%;
+    height: 10rem;
+  }
+  .item {
+    display: table-cell;
+    vertical-align: top;
+  }
+  .item img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  
+  .img-row {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    height: 10rem;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 1rem;
+  }
+  
+  .img-row img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  
+  .quotes {
+    text-align: left;
+  }
+  
+  .quotes blockquote {
+    text-align: center;
+    padding: 1rem;
+    color: rgb(35, 110, 153);
+  }
+  
+  .comp-home {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 1rem;
+    max-width: 1000px;
+  }
+  
+  .right-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  
+  .internet {
+    font-size: 1.5rem;
+    color: rgb(51, 130, 68);
+    text-decoration: underline;
+    font-weight: bold;
+  }
+  
+  .most-pop {
+    font-size: 2rem;
+    color: rgb(51, 210, 242);
+    font-weight: bold;
+  }
+  
+  .the-first {
+    font-size: 1.5rem;
+    color: rgb(51, 130, 68);
+    font-style: italic;
+  }

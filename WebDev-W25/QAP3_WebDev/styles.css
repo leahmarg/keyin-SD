@@ -1,0 +1,205 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: rgb(0, 0, 0);
+  font-family: Arial Narrow, sans-serif;
+}
+
+html,
+body {
+  min-height: 100dvh;
+}
+
+body {
+  background-color: rgb(255, 255, 255);
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+/* Mainbox wrapper */
+#content-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  max-width: 1000px;
+  padding: 1rem;
+}
+
+/* Header + break bar styling */
+header,
+.bar {
+  background-color: rgb(119, 119, 119);
+  padding: 0.5rem;
+  text-align: left;
+}
+
+/* Text/nav box styling */
+.navbox {
+  background-color: rgb(0, 18, 77);
+  color: beige;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  padding: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.navbox:hover {
+  background-color: rgb(55, 87, 175);
+}
+
+/* Image box styling */
+.imgbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.imgbox img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Empty box for spacing */
+.emptybox {
+  text-align: left;
+}
+
+/* Grid layout for banner/nav section */
+.banner {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(12%, 1fr));
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 2px;
+  grid-template-areas:
+    "empty1 empty2 text3 pic4 pic5 empty5 empty7 empty8"
+    "pic1 text2 pic2 empty4 text5 pic7 text6 pic8"
+    "text1 empty3 pic3 text4 pic6 empty6 text7 empty9";
+  grid-area: banner;
+}
+
+.banner::before {
+  content: "";
+  width: 0;
+  padding-bottom: 100%;
+  grid-row: 1 / 1;
+  grid-column: 1 / 1;
+}
+
+.banner > *:first-child {
+  grid-row: 1 / 1;
+  grid-column: 1 / 1;
+}
+
+/* Assign grid areas to items */
+#text1 {grid-area: text1;}
+#text2 {grid-area: text2;}
+#text3 {grid-area: text3;}
+#text4 {grid-area: text4;}
+#text5 {grid-area: text5;}
+#text6 {grid-area: text6;}
+#text7 {grid-area: text7;}
+#pic1 {grid-area: pic1;}
+#pic2 {grid-area: pic2;}
+#pic3 {grid-area: pic3;}
+#pic4 {grid-area: pic4;}
+#pic5 {grid-area: pic5;}
+#pic6 {grid-area: pic6;}
+#pic7 {grid-area: pic7;}
+#pic8 {grid-area: pic8;}
+#empty1 {grid-area: empty1;}
+#empty2 {grid-area: empty2;}
+#empty3 {grid-area: empty3;}
+#empty4 {grid-area: empty4;}
+#empty5 {grid-area: empty5;}
+#empty6 {grid-area: empty6;}
+#empty7 {grid-area: empty7;}
+#empty8 {grid-area: empty8;}
+#empty9 {grid-area: empty9;}
+
+/* Main content styling */
+main {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  padding: 1rem;
+  background-color: rgb(223, 223, 223);
+}
+
+/* Foster sign up + 3 pics */
+#foster-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 16rem;
+}
+
+/* Sign up button styling */
+.sign-up-button {
+  background-color: gray;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.sign-up-button:hover {
+  background-color: darkgray;
+}
+
+/* Sign up image styling */
+.sign-up-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.sign-up-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Footer styling */
+.footer-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: rgb(119, 119, 119);
+  color: white;
+}
+
+.copyright {
+  font-size: 14px;
+}
+
+.social-links {
+  display: flex;
+  gap: 15px;
+}
+
+.social-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: lightgray;
+}
