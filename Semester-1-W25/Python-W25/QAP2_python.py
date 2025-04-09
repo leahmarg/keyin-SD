@@ -1,6 +1,6 @@
-# Description: 
+# Description: St. John's Marina & Yacht Club
 # Author: Leah Murphy
-# Date(s): Feb 2, 2025
+# Date: Feb 2 2025
 
 
 # Define program constants
@@ -31,7 +31,7 @@ province = input("Enter province (XX): " )
 post_code = input("Enter postal code: ")
 home_num = input("Enter home phone number: ")
 cell_num = input("Enter cellphone number: ")
-member_inq = input("Are you a standard or exclusive member? (Type S for standard, E for exclusive): ").upper()
+member_inq = input("Are you a standard or executive member? (Type S for standard, E for exclusive): ").upper()
 alt_members = int(input("Enter number of alternative members: "))
 site_cleaning = input(f"Would you like a weekly site cleaning for ${CLEAN_FEE} per week? (Y/N): ").upper()
 video_surv = input(f"Would you like video surveillance for ${VID_FEE} per week? (Y/N): ").upper()

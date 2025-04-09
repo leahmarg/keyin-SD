@@ -1,6 +1,6 @@
 # Description: Honest Harry’s Used Car Sales
 # Author: Leah Murphy
-# Date(s): Mar 2 2025
+# Date: Mar 2 2025
 
 # Define required libraries
 from datetime import datetime, timedelta
