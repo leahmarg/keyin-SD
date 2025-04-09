@@ -1,7 +1,7 @@
 # Keyin Software Development
 
 ## Courses in Progress
-- Essential Skills for Softaware Development
+- Essential Skills for Software Development
 - Intro to Web Development
 - Intro to Programming with Python
 
