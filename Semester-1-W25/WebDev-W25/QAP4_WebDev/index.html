@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>St. John's Marina & Yacht Club</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <h2>St. John's Marina & Yacht Club Membership</h2>
+    <div class="container">
+        <form id="membershipForm">
+            <label>Date (YYYY-MM-DD): <input type="date" id="date" required></label>
+            <label for="siteNum">Site number (1-100):</label>
+            <input type="number" id="siteNum" min="1" max="100" required>       
+            <label>Name: <input type="text" id="memberName" required></label>
+            <label>Street Address: <input type="text" id="streetAdd" required></label>
+            <label>City: <input type="text" id="city" required></label>
+            <label>Province:
+                <select id="province" required>
+                <option value="">--</option>
+                <option value="AB">AB</option>
+                <option value="BC">BC</option>
+                <option value="MB">MB</option>
+                <option value="NB">NB</option>
+                <option value="NL">NL</option>
+                <option value="NS">NS</option>
+                <option value="NT">NT</option>
+                <option value="NU">NU</option>
+                <option value="ON">ON</option>
+                <option value="PE">PE</option>
+                <option value="QC">QC</option>
+                <option value="SK">SK</option>
+                <option value="YT">YT</option>
+                </select>
+            </label>
+            <label>Postal Code: <input type="text" id="postCode" required></label>
+            <label>Home Phone Number: <input type="tel" id="homeNum" required></label>
+            <label>Cell Phone Number: <input type="tel" id="cellNum" required></label>
+            <label>Membership Type:
+            <select id="memberInq" required>
+                <option value="S">Standard</option>
+                <option value="E">Executive</option>
+            </select>
+            </label>
+            <label>Number of Alternative Members: <input type="number" id="altMembers" value="0" min="0" required></label>
+            <label>Weekly Site Cleaning ($50/week)? 
+            <select id="siteCleaning" required>
+                <option value="">--</option>
+                <option value="Y">Yes</option>
+                <option value="N">No</option>
+            </select>
+            </label>
+            <label>Video Surveillance ($35/week)? 
+            <select id="videoSurv" required>
+                <option value="">--</option>
+                <option value="Y">Yes</option>
+                <option value="N">No</option>
+            </select>
+            </label>
+            <button type="submit">Generate Receipt</button>
+        </form>
+
+        <pre id="receiptOutput"></pre>
+    </div>
+
+  <script src="QAP4_WebDev.js"></script>
+</body>
+</html>
