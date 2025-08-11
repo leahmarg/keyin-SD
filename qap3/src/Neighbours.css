@@ -1,0 +1,32 @@
+.neighbours {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    gap: 1rem;
+}
+
+.country-card {
+    background-color: rgba(160, 163, 162, 0.301);
+    border-radius: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    width: 60rem;
+    height: 7rem;
+    display: flex;
+    flex-direction: row;
+    padding: 1rem;
+
+
+}
+
+.country-card img {
+    max-height: 6rem
+}
+
+.country-capital {
+    width: 20rem;
+}
+
+.country-neighbours {
+    width: 20rem;
+}
