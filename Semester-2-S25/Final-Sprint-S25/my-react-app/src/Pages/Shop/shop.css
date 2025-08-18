@@ -1,0 +1,7 @@
+.shop {
+    background-color: #D5E3ED;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 3rem;
+}

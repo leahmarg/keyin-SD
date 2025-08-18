@@ -17,8 +17,17 @@ function createTestHarness(type, name, func) {
 
   switch (type) {
     case "text":
-      const input = document.createElement("input");
-      container.appendChild(input);
+      const inputs = [];
+
+      // create one input per parameter
+      const paramNames = func.toString().split("(")[1].split(")")[0].split(", ");
+      paramNames.forEach(param => {
+        const input = document.createElement("input");
+        input.placeholder = param; // show parameter name
+        container.appendChild(input);
+        inputs.push(input);
+      });
+
       const button = document.createElement("button");
       button.innerText = "Run";
       container.appendChild(button);
@@ -343,6 +352,8 @@ function formatCoords(...values) {
   });
 }
 
+createTestHarness("text", "Format Coordinates", formatCoords);
+
 /*******************************************************************************
  * Problem 7: determine MIME type from filename extension
  *
@@ -434,6 +445,8 @@ function mimeFromFilename(filename) {
   return "application/octet-stream";
 }
 
+createTestHarness("text", "MIME_TYPES", MIME_TYPES);
+
 /*******************************************************************************
  * Problem 8, Part 1: generate license text and link from license code.
  *
@@ -503,6 +516,8 @@ function generateLicenseLink(licenseCode, targetBlank) {
   // If targetBlank is false, return link without target="_blank"
   return `<a href="${url}">${licenseCode}</a>`;
 }
+
+createTestHarness("text", "Generate Liscense Link", generateLicenseLink);
 
 /*******************************************************************************
  * Problem 9 Part 1: convert a value to a Boolean (true or false)
@@ -591,6 +606,8 @@ function pureBool(value) {
   }
 }
 
+createTestHarness("text", "MIME_TYPES", MIME_TYPES);
+
 /*******************************************************************************
  * Problem 9 Part 2: checking for all True or all False values in a normalized list
  *
@@ -646,6 +663,7 @@ function none(...args) {
     return false;
   }
 }
+
 
 /*******************************************************************************
  * Problem 10 - build a URL
@@ -737,3 +755,5 @@ function buildUrl(query, order, count, license) {
   // Build URL with parameters
   return `https://api.inaturalist.org/v2/observations?query='${newQuery}'&count=${count}&order=${order}&license=${license}`;
 }
+
+createTestHarness("text", "buildURL", buildUrl, 4);

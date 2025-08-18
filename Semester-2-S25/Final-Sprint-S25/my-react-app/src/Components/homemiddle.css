@@ -1,0 +1,102 @@
+.home-middle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #D5E3ED;
+    position: relative;
+    transform: translateY(-8rem);
+    padding: 1rem;
+    height: 50rem;
+}
+
+.middle-container {
+    display: flex;
+    max-width: 70rem;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.middle-container h2 {
+    color: #2C4830;
+    font-size: 4.6rem;
+    padding: 1rem;
+    margin: 0px;
+    font-family: 'Averia Serif Libre', serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.middle-container p {
+    font-size: 2rem;
+    padding: 1rem;
+    padding-top: 5rem;
+    margin: 0px;
+    z-index: 100;
+    font-weight: 300;
+    font-style: normal;
+    transform: translateY(-2rem);
+}
+
+.middle-right-img-contianer{
+    max-width: 30rem;
+}
+.middle-right-img {
+    max-width: 17rem;
+    padding-top: 0px;
+}
+
+.middle-right-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 3%
+}
+
+button {
+    width: 100%;
+    height: 3rem;
+}
+
+.middle-left {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    max-width: 35rem;
+    height:45rem
+
+}
+.img1 {
+    transform: translateX(6rem);
+    transform: translateY();
+}
+
+.img2 {
+    transform: translateY(-3rem);
+}
+.shop-button {
+    display: flex;
+    justify-content: center;
+    padding: 1rem 3rem;
+    background: antiquewhite;
+    font-size: 1.6rem;
+    color: #2C4830;
+    border-radius: 1rem;
+    text-decoration: none;
+    font-weight: bold;
+    width: 100%;
+    border-color: #2C4830;
+    border-width: 1px;
+    border-style: inset;
+}
+.shop-button a {
+    color: #2C4830;
+}
+.shop-button a:visited {
+    color: #2C4830;
+}
+
+.btn:hover {
+  background: #2C4830;
+}

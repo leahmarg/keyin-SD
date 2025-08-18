@@ -1,0 +1,36 @@
+.details {
+    display: flex; 
+    justify-content: center;
+    background-color: #D5E3ED;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    padding-bottom: 10rem;
+}
+
+.detail-container {
+    display: flex;
+    max-width: 60rem;
+    background-color: #D5E3ED;
+}
+
+.details-left {
+    max-width: 25rem;
+}
+
+.details-left img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 2rem;
+}
+
+.details-right {
+    max-width: 30rem;
+    padding: 1rem;
+}
+
+button {
+    border-radius: 1rem;
+    font-size: 1rem;
+    max-width: 10rem;
+}

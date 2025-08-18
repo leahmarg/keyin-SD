@@ -1,0 +1,70 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "name": "Pink Sapphire Halo Ring",
+      "price": 2400.0,
+      "metal": "Gold",
+      "gemstone": "Sapphire",
+      "setting": "Halo",
+      "cut": "Emerald",
+      "description": "A sweet 18ct rose gold ring made circa 1940. With a lovely emerald cut pink sapphire set in a diamond halo. In near-perfect condition, would make a lovely engagement ring.",
+      "imageURL": "/item01.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Pear Diamond Double Frame Halo Ring",
+      "price": 6200.0,
+      "metal": "Silver",
+      "gemstone": "Diamond",
+      "setting": "Halo",
+      "cut": "Pear",
+      "description": "A stunning pear cut diamond with a double halo made circa 1950. Stone is brilliantly clear, in very good condition. A wonderful piece to add to your collection!",
+      "imageURL": "/item02.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Two Stone Pavé Diamond Ring",
+      "price": 7500.0,
+      "metal": "Silver",
+      "gemstone": "Diamond",
+      "setting": "Pavé",
+      "cut": "round",
+      "description": "A unique verticle stack 'toi et moi' two stone diamond ring made circa 1930-1940. Both stones are round cut, clear white and accented by a lovely pavé set band.",
+      "imageURL": "/item03.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Round Diamond Halo Ring",
+      "price": 6900.0,
+      "metal": "Silver",
+      "gemstone": "Diamond",
+      "setting": "Halo",
+      "cut": "round",
+      "description": "A lively sterling silver diamond halo ring made circa 1950. The centre claw set diamond is a brilliantly bright white stone. Around it are fourteen claw set smaller diamonds. The band has a beautiful pavé setting, would make a wonderful enagagement ring! ",
+      "imageURL": "/item04.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Yellow Diamond Solitaire Ring",
+      "price": 3300.0,
+      "metal": "Platinum",
+      "gemstone": "Diamond",
+      "setting": "Prong",
+      "cut": "round",
+      "description": "A beautiful platinum solitaire diamond ring that was made circa 1920-1930. It has been prong set with a brilliant round cut diamond. It has good clarity and slight yellow colour. A simple, timeless ring!",
+      "imageURL": "/item05.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Half-Eternity Diamond Band Ring",
+      "price": 1250.0,
+      "metal": "Gold",
+      "gemstone": "Diamond",
+      "setting": "Band",
+      "cut": "round",
+      "description": "A simple rose gold half-eternity band ring made circa 1960. Set with 14 small diamonds, all with great clarity and white colour. Would make a lovely wedding band or anniversary ring.",
+      "imageURL": "/item06.jpg"
+    }
+  ]
+}

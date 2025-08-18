@@ -1,0 +1,18 @@
+
+
+.header-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0.5rem;
+    align-items: center;
+}
+
+.button-container {
+    max-width: 50rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 1rem;
+    margin:1rem;
+}

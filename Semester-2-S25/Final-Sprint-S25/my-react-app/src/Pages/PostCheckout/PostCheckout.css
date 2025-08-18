@@ -1,0 +1,7 @@
+.thank-you {
+    display: flex;
+    justify-content: center;
+    padding-top: 5rem;
+    padding-bottom: 25rem;
+    background-color: antiquewhite;
+}

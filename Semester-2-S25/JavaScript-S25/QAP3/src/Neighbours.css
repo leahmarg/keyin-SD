@@ -1,0 +1,58 @@
+.neighbours {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 100%;
+    gap: 1rem;
+}
+
+.country-card {
+    background-color: rgba(160, 163, 162, 0.301);
+    border-radius: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 60rem;
+    height: 8.2rem;
+    display: flex;
+    flex-direction: row;
+    padding: 0.5rem;
+    gap: 1rem;
+
+
+}
+
+.country-card img {
+    max-height: 6rem;
+    max-width:auto;
+    
+}
+
+.flag-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15rem;
+
+
+}
+.name-container {
+    display: flex;
+    align-items: center;
+    width: 10rem;
+}
+
+.country-capital {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 10rem;
+    max-width: 15rem;
+}
+
+.country-neighbours {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20rem;
+    max-width: 20rem;
+}

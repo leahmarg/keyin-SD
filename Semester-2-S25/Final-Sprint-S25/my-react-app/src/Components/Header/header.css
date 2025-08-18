@@ -1,0 +1,40 @@
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #2C4830;
+    padding: 0.5rem;
+    color: white;
+    font-size: 1.2rem;
+    font-family: 'Gill Sans MT', serif;
+  }
+
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+    gap: 2rem;
+    width: 70rem;
+}
+
+/* unvisited link */
+.navbar a:link {
+    text-decoration: none;
+    color: #D5E3ED;
+}
+
+/* visited link */
+.navbar a:visited {
+    text-decoration: none;
+    color: #D5E3ED;
+}
+
+/* mouse over link */
+.navbar a:hover {
+    text-decoration: none;
+    color: #D5E3ED;
+}
+
+/* selected link */
+.navbar a:active {
+    text-decoration: none;
+    color: #D5E3ED;
+}

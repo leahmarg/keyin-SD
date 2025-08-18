@@ -1,0 +1,42 @@
+.item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 1rem;
+    max-width: 15rem;
+    background-color: antiquewhite;
+    padding: 0.8rem;
+}
+
+.item-img {
+    position: relative;
+}
+
+.item-img img {
+    max-width: 14rem;
+    max-height: 14rem;
+    object-fit: cover;
+    border-radius: 1rem;
+    
+}
+
+.see-details-overlay {
+    position: absolute;
+    bottom: .75rem;
+    left: .75rem;
+}
+
+.see-details-overlay a {
+    color: #2C4830;
+}
+
+.item-name-price {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.item-name-price p{
+    font-size: 1.1rem;
+}

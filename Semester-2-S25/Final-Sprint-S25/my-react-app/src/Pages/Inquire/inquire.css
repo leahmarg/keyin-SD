@@ -1,0 +1,53 @@
+.inquire-header {
+    display: flex;
+    justify-content: center;
+    background-color: #D5E3ED;
+   
+}
+
+.inquire-header-container {
+    display: flex;
+    justify-content: center;
+    max-width: 70rem; 
+    gap: 1rem;
+}
+
+.inquire-header-1 {
+    padding: 0.5rem;
+    max-width: 17rem;
+    gap: 1rem;
+}
+
+.inquire-header-1 img{
+    width: 100%;
+    border-radius: 2rem;
+}
+
+.inquire-header-2 {
+    max-width: 20rem;
+}
+
+.inquire-header-3 {
+    gap: 1rem;
+    max-width: 17rem;
+}
+.inquire-header-3 img{
+    width: 100%;
+    border-radius: 2rem;
+    transform: translateY(4rem);
+}
+
+.inquire-header h2 {
+    font-size: 3.2rem;
+    margin: 0px;
+    font-family: 'Averia Serif Libre', serif;
+}
+.inquire-info-container {
+    display: flex;
+    background-color: antiquewhite;
+    justify-content: center;
+}
+.inquire-info {
+    padding-top: 3rem;
+    padding-bottom: 4rem;
+}

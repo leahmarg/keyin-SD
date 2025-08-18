@@ -1,0 +1,21 @@
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer-container {
+    display: flex;
+    width: 60rem;
+    justify-content: space-between;
+}
+.footer-location h3{
+    
+    margin: 0px;
+}
+.footer-location h4{
+    margin: 0;
+    padding-bottom: 2rem;
+}
+ul {
+  list-style-type: none;
+}
