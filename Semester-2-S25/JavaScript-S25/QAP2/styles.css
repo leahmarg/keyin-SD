@@ -2,16 +2,27 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial Narrow, sans-serif;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+h1{
+  color: darkmagenta;
+}
+h2{
+  color: darkmagenta;
 }
 
 html,
 body {
     min-height: 100dvh;
+    background-color: honeydew;
 }
 
 header {
     justify-content: center;
+    padding: 1rem;
+    text-decoration: underline;
+    text-decoration-color: darkolivegreen;
 }
 
 body {
@@ -23,9 +34,33 @@ body {
 #content-wrap {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
+  max-width: 50rem;
 }
 
 div {
   margin: 1rem;
+}
+
+
+div {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 20rem;
+
+}
+
+div button {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  background-color: rgb(183, 143, 221);
+  font-size: 1.1rem;
+  color: honeydew;
+  border-color: darkmagenta;
+}
+
+div input {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
 }

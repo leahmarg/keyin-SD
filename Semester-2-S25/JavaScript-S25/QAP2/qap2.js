@@ -14,14 +14,17 @@ function createTestHarness(type, name, func) {
   title.innerText = name;
   container.appendChild(title);
 
-
   switch (type) {
     case "text":
       const inputs = [];
 
       // create one input per parameter
-      const paramNames = func.toString().split("(")[1].split(")")[0].split(", ");
-      paramNames.forEach(param => {
+      const paramNames = func
+        .toString()
+        .split("(")[1]
+        .split(")")[0]
+        .split(", ");
+      paramNames.forEach((param) => {
         const input = document.createElement("input");
         input.placeholder = param; // show parameter name
         container.appendChild(input);
@@ -31,7 +34,7 @@ function createTestHarness(type, name, func) {
       const button = document.createElement("button");
       button.innerText = "Run";
       container.appendChild(button);
-      
+
       const output = document.createElement("input");
       output.disabled = true;
 
@@ -41,13 +44,148 @@ function createTestHarness(type, name, func) {
       button.addEventListener("click", () => {
         try {
           output.style.color = "black";
-          output.value = func(input.value);
+          output.value = func(...inputs.map((i) => i.value));
         } catch (error) {
           output.style.color = "red";
           output.value = error.message;
         }
       });
       break;
+    case "video": {
+      const srcInput = document.createElement("input");
+      srcInput.placeholder = "Video URL";
+      container.appendChild(srcInput);
+
+      const widthInput = document.createElement("input");
+      widthInput.type = "number";
+      widthInput.placeholder = "Width (px)";
+      container.appendChild(widthInput);
+
+      const controlsLabel = document.createElement("label");
+      const controlsInput = document.createElement("input");
+      controlsInput.type = "checkbox";
+      controlsLabel.appendChild(controlsInput);
+      controlsLabel.appendChild(document.createTextNode(" Enable Controls"));
+      container.appendChild(controlsLabel);
+
+      const button = document.createElement("button");
+      button.innerText = "Run";
+      container.appendChild(button);
+
+      const output = document.createElement("div");
+      container.appendChild(output);
+
+      button.addEventListener("click", () => {
+        output.innerHTML = ""; // clear previous video
+        try {
+          // Call your createVideo function
+          const videoHTML = func(
+            srcInput.value,
+            widthInput.value,
+            controlsInput.checked
+          );
+          output.innerHTML = videoHTML; // renders the <video> element
+        } catch (error) {
+          output.innerText = error.message;
+          output.style.color = "red";
+        }
+      });
+      break;
+    }
+    case "date": {
+      const input = document.createElement("input");
+      input.type = "date";
+      container.appendChild(input);
+
+      const button = document.createElement("button");
+      button.innerText = "Run";
+      container.appendChild(button);
+
+      const output = document.createElement("p");
+      container.appendChild(output);
+
+      button.addEventListener("click", () => {
+        if (!input.value) {
+          output.innerText = "Please select a date!";
+          return;
+        }
+        const dateObj = new Date(input.value);
+        const result = func(dateObj);
+        output.innerText = result;
+      });
+      break;
+    }
+    case "url": {
+      const inputs = []; // fix: not urlInputs + inputs mismatch
+
+      // create one input per parameter
+      const params = [
+        "Query",
+        "Order (ascending OR descending)",
+        "Count (1-50)",
+        "License",
+      ];
+      params.forEach((param) => {
+        const input = document.createElement("input");
+        input.placeholder = param; // show parameter name
+        container.appendChild(input);
+        inputs.push(input);
+      });
+
+      const buildURLButton = document.createElement("button");
+      buildURLButton.innerText = "Run";
+      container.appendChild(buildURLButton);
+
+      const buildURLOutput = document.createElement("a");
+      buildURLOutput.target = "_blank";
+      container.appendChild(document.createElement("br"));
+      container.appendChild(buildURLOutput);
+
+      buildURLButton.addEventListener("click", () => {
+        try {
+          const url = func(...inputs.map((i) => i.value));
+          buildURLOutput.href = url;
+          buildURLOutput.innerText = url;
+          buildURLOutput.style.color = "blue";
+        } catch (error) {
+          buildURLOutput.href = "#";
+          buildURLOutput.innerText = error.message;
+          buildURLOutput.style.color = "red";
+        }
+      });
+      break;
+    }
+    case "licenseLink": {
+      const licenseInput = document.createElement("input");
+      licenseInput.placeholder = "License Code";
+      container.appendChild(licenseInput);
+
+      const checkboxLabel = document.createElement("label");
+      const targetBlankInput = document.createElement("input");
+      targetBlankInput.type = "checkbox";
+      checkboxLabel.appendChild(targetBlankInput);
+      checkboxLabel.appendChild(document.createTextNode(" Open in new tab?"));
+      container.appendChild(checkboxLabel);
+
+      const button = document.createElement("button");
+      button.innerText = "Run";
+      container.appendChild(button);
+
+      const output = document.createElement("div");
+      container.appendChild(output);
+
+      button.addEventListener("click", () => {
+        try {
+          const resultHTML = func(licenseInput.value, targetBlankInput.checked);
+          output.innerHTML = resultHTML;
+          output.style.color = "black";
+        } catch (error) {
+          output.innerText = error.message;
+          output.style.color = "red";
+        }
+      });
+      break;
+    }
     default:
       throw new Error("Unknown type");
   }
@@ -140,17 +278,17 @@ createTestHarness("text", "snake_case", snake);
  * ******************************************************************************/
 
 function createVideo(src, width, controls) {
-  // Remove leading/trailing whitespace
   src = src.trim();
-  // Add controls attribute if true, wrap src and width in double-quotes
-  if (controls) {
-    return `<video src="${src}" width="${width}" controls></video>`;
+  let attrs = `src="${src}"`;
+  if (Number.isInteger(Number(width))) {
+    attrs += ` width="${width}"`;
   }
-  // If controls false, return video element without controls
-  return `<video src="${src}" width="${width}"></video>`;
+  if (controls) {
+    attrs += " controls";
+  }
+  return `<video ${attrs}></video>`;
 }
-
-createTestHarness("text", "createVideo", createVideo);
+createTestHarness("video", "createVideo", createVideo);
 
 /*******************************************************************************
  * Problem 3: extract Date from date string
@@ -261,7 +399,9 @@ function toDateString(value) {
   }
 }
 
-createTestHarness("text", "toDateString", (val) => toDateString(new Date(val)));
+createTestHarness("date", "toDateString", (dateObj) => {
+  return dateObj.toISOString().split("T")[0];
+});
 
 /*******************************************************************************
  * Problem 5: parse a geographic coordinate
@@ -288,30 +428,36 @@ createTestHarness("text", "toDateString", (val) => toDateString(new Date(val)));
  ******************************************************************************/
 
 function normalizeCoord(value) {
-  // Check if value is a string
   if (typeof value !== "string") {
     throw new Error("This is incorrect, please enter a string.");
   }
 
-  // Split value into latitude and longitude
-  let [lat, lng] = value.includes(" ")
-    ? [value[1], value[0]]
-    : value.split(",");
+  let lat, lng;
 
-  // Check if latitude is valid
+  if (value.trim().startsWith("[")) {
+    const parts = value.replace(/[\[\]]/g, "").split(",");
+    if (parts.length !== 2) throw new Error("Invalid coordinate format");
+    lng = parseFloat(parts[0]);
+    lat = parseFloat(parts[1]);
+  } else {
+    const parts = value.split(",");
+    if (parts.length !== 2) throw new Error("Invalid coordinate format");
+    lat = parseFloat(parts[0]);
+    lng = parseFloat(parts[1]);
+  }
+
+  if (isNaN(lat) || isNaN(lng)) {
+    throw new Error("Invalid coordinate numbers.");
+  }
   if (lat < -90 || lat > 90) {
     throw new Error("Latitude must be between -90 and 90.");
   }
-
-  // Check if longitude is valid
   if (lng < -180 || lng > 180) {
     throw new Error("Longitude must be between -180 and 180.");
   }
 
-  // Return formatted coordinates
   return `(${lat}, ${lng})`;
 }
-
 createTestHarness("text", "Normalize coordinates", normalizeCoord);
 
 /*******************************************************************************
@@ -437,15 +583,11 @@ function mimeFromFilename(filename) {
   if (typeof filename !== "string") {
     throw new Error("Expected string");
   }
-  for (const [fileExtension, mimeType] of Object.entries(MIME_TYPES)) {
-    if (filename.endsWith(fileExtension)) {
-      return mimeType;
-    }
-  }
-  return "application/octet-stream";
+  const ext = filename.split(".").pop().toLowerCase();
+  return MIME_TYPES[ext] || "application/octet-stream";
 }
 
-createTestHarness("text", "MIME_TYPES", MIME_TYPES);
+createTestHarness("text", "mimeFromFilename", mimeFromFilename);
 
 /*******************************************************************************
  * Problem 8, Part 1: generate license text and link from license code.
@@ -492,6 +634,15 @@ createTestHarness("text", "MIME_TYPES", MIME_TYPES);
  * You can read more about HTML links at https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a
  *
  ******************************************************************************/
+const LICENSES = {
+  "CC-BY": "Creative Commons Attribution License",
+  "CC-BY-NC": "Creative Commons Attribution-NonCommercial License",
+  "CC-BY-SA": "Creative Commons Attribution-ShareAlike License",
+  "CC-BY-ND": "Creative Commons Attribution-NoDerivs License",
+  "CC-BY-NC-SA":
+    "Creative Commons Attribution-NonCommercial-ShareAlike License",
+  "CC-BY-NC-ND": "Creative Commons Attribution-NonCommercial-NoDerivs License",
+};
 
 function generateLicenseLink(licenseCode, targetBlank) {
   // Check if licenseCode is a string
@@ -517,7 +668,7 @@ function generateLicenseLink(licenseCode, targetBlank) {
   return `<a href="${url}">${licenseCode}</a>`;
 }
 
-createTestHarness("text", "Generate Liscense Link", generateLicenseLink);
+createTestHarness("licenseLink", "Generate Liscense Link", generateLicenseLink);
 
 /*******************************************************************************
  * Problem 9 Part 1: convert a value to a Boolean (true or false)
@@ -606,8 +757,6 @@ function pureBool(value) {
   }
 }
 
-createTestHarness("text", "MIME_TYPES", MIME_TYPES);
-
 /*******************************************************************************
  * Problem 9 Part 2: checking for all True or all False values in a normalized list
  *
@@ -664,7 +813,6 @@ function none(...args) {
   }
 }
 
-
 /*******************************************************************************
  * Problem 10 - build a URL
  *
@@ -717,10 +865,9 @@ function none(...args) {
  ******************************************************************************/
 
 function buildUrl(query, order, count, license) {
-  // Array of valid license codes
   const licenseCodes = [
-    none,
-    any,
+    "none",
+    "any",
     "cc-by",
     "cc-by-nc",
     "cc-by-sa",
@@ -728,32 +875,14 @@ function buildUrl(query, order, count, license) {
     "cc-by-nc-sa",
     "cc-by-nc-nd",
   ];
-
-  // Check if query is a string
-  if (typeof query !== "string") {
-    throw new Error("Expected string.");
-  }
-
-  // Check if order is a string
-  if (typeof order !== "string") {
-    throw new Error("Expected string.");
-  }
-
-  // Check if count is a number
-  if (typeof count !== "number") {
-    throw new Error("Expected number.");
-  }
-
-  // Check if license is a valid license code
-  if (!licenseCodes.includes(license)) {
-    throw new Error("License code invalid.");
-  }
-
-  // Encode query and trim whitespace
-  let newQuery = encodeURIComponent(query.trim());
-
-  // Build URL with parameters
+  if (typeof query !== "string") throw new Error("Expected string.");
+  if (!["ascending", "descending"].includes(order))
+    throw new Error("Order invalid.");
+  count = Number(count);
+  if (typeof count !== "number" || count < 1 || count > 50)
+    throw new Error("Count must be 1-50.");
+  if (!licenseCodes.includes(license)) throw new Error("License code invalid.");
+  const newQuery = encodeURIComponent(query.trim());
   return `https://api.inaturalist.org/v2/observations?query='${newQuery}'&count=${count}&order=${order}&license=${license}`;
 }
-
-createTestHarness("text", "buildURL", buildUrl, 4);
+createTestHarness("url", "buildURL", buildUrl);
