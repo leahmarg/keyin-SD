@@ -1,4 +1,4 @@
-.main-container{
+.main-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -10,8 +10,8 @@
 .main-container h1 {
     color: antiquewhite;
     font-size: 10rem;
-    padding: 0px;
-    margin: 0px;
+    padding: 0;
+    margin: 0;
     z-index: 100;
     font-family: 'Hedvig Letters Serif';
     font-weight: 200;
@@ -21,19 +21,17 @@
 .main-container h2 {
     color: antiquewhite;
     font-size: 2rem;
-    padding: 0px;
-    margin: 0px;
+    padding: 0;
+    margin: 0;
     z-index: 100;
     font-family: 'Averia Serif Libre', serif;
     font-weight: 300;
     font-style: normal;
-    transform: translateY(-2rem);
+    transform: translateY(-2.5rem);
 }
-
 
 .main-img {
     max-width: 70rem;
-    padding-top: 0px;
     transform: translateY(-9rem);
 }
 

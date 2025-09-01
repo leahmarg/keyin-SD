@@ -4,6 +4,7 @@ import { useItems } from "../../Components/useItems";
 import LogoHeader from "../../Components/LogoHeader/LogoHeader";
 import "./shop.css";
 import Footer from "../../Components/Footer/footer";
+import { SmoothAll } from "../../Components/SmoothAll";
 
 export function Shop() {
   const items = useItems();
@@ -12,12 +13,15 @@ export function Shop() {
     <>
       <Header></Header>
       <LogoHeader></LogoHeader>
-      <div className="shop">
-        <div className="shop-container">
-          <ItemList items={items} />
+      <SmoothAll>
+        <div className="shop">
+          <div className="shop-container">
+            <ItemList items={items} />
+          </div>
         </div>
-      </div>
-      <Footer></Footer>
+
+        <Footer></Footer>
+      </SmoothAll>
     </>
   );
 }

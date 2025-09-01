@@ -5,19 +5,18 @@ import { Shop } from "./Pages/Shop/shop";
 import { Details } from "./Pages/Details/details";
 import { Cart } from "./Pages/Cart/cart";
 import { Checkout } from "./Pages/Checkout/checkout";
+import { PostCheckout } from "./Pages/PostCheckout/PostCheckout";
+import { CartContextProvier } from "./CartContext";
 
 import "@fontsource/hedvig-letters-serif";
 import "@fontsource/averia-serif-libre";
-import { useState } from "react";
-import { CartContextProvier } from "./CartContext";
-import { PostCheckout } from "./Pages/PostCheckout/PostCheckout";
 
 function App() {
   return (
     <CartContextProvier>
       <Router>
         <Routes>
-          <Route path="/" element={<Home />} /> {/* root route */}
+          <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
           <Route path="/inquire" element={<Inquire />} />
           <Route path="/shop" element={<Shop />} />

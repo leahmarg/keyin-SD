@@ -7,6 +7,7 @@ import { CartContext } from "../../CartContext";
 import LogoHeader from "../../Components/LogoHeader/LogoHeader";
 import "./details.css";
 import Footer from "../../Components/Footer/footer";
+import { SmoothAll } from "../../Components/SmoothAll";
 
 export function Details() {
   const { itemId } = useParams();
@@ -22,26 +23,28 @@ export function Details() {
     <>
       <Header></Header>
       <LogoHeader></LogoHeader>
-      <div className="details">
-        <div className="detail-container">
-          <div className="details-left">
-            <img src={item.imageURL} alt={item.name}></img>
-          </div>
-          <div className="details-right">
-            <h1>{item.name}</h1>
-            <h2>${item.price}</h2>
-            <p>{item.description}</p>
-            <button
-              onClick={() => {
-                addToCart(item);
-              }}
-            >
-              Add to Cart
-            </button>
+      <SmoothAll>
+        <div className="details">
+          <div className="detail-container">
+            <div className="details-left">
+              <img src={item.imageURL} alt={item.name}></img>
+            </div>
+            <div className="details-right">
+              <h1>{item.name}</h1>
+              <h2>${item.price}</h2>
+              <p>{item.description}</p>
+              <button
+                onClick={() => {
+                  addToCart(item);
+                }}
+              >
+                Add to Cart
+              </button>
+            </div>
           </div>
         </div>
-      </div>
-      <Footer></Footer>
+        <Footer></Footer>
+      </SmoothAll>
     </>
   );
 }

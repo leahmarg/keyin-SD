@@ -2,9 +2,10 @@
     background-color: #D5E3ED;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: top;
     align-items: center;
     gap: 1rem;
+    min-height: 100dvh;
 }
 
 .cart-header {
@@ -31,6 +32,8 @@
 .cart-items p{
     font-size: 1rem;
     color: #2C4830;
+    font-weight: bold;
+    font-size: 1.3rem;
 
 }
 
@@ -84,7 +87,10 @@
     color: #2C4830;
 }
 .cart-total h3{
+    font-size: 1.5rem;
+    font-weight: bold;
     margin: 0px;
+    font-family: 'Averia Serif Libre', serif;
 }
 .cart-total h4{
     margin: 2px;

@@ -6,3 +6,7 @@
     align-items: center;
     position: relative;
 }
+
+body {
+    background-color: #D5E3ED;
+}

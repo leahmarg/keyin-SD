@@ -9,7 +9,6 @@ export default function Header() {
   return (
     <nav>
       <div className="navbar">
-        <Link to="/home">Home</Link>
         <Link to="/inquire">Inquire</Link>
         <Link to="/shop">Shop</Link>
         <Link to="/cart">Cart {cart.length > 0 ? `(${cart.length})` : ""}</Link>

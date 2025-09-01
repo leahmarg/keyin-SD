@@ -1,16 +1,29 @@
 .logo-header {
-    font-size: 1.7rem;
-    color: #2C4830;
-    background-color: #D5E3ED;
-    display: flex;
-    justify-content: center;
-    padding:0;
-    margin: 0;
-    height: 7rem;
+  font-family: "Hedvig Letters Serif", serif;
+  font-size: 1.7rem;  
+  color: #2C4830;
+  background-color: #D5E3ED;
+  display: flex;
+  justify-content: center;
+  padding: 0.6rem;
+  padding-bottom: 1rem;
+  margin: 0;
+  height: 7rem;
 }
 
-.logo-header h1 {
-    font-family: "Hedvig letters serif", serif;
-    font-size: 3rem;
-
+.logo-header a:link,
+.logo-header a:visited {
+  text-decoration: none;
+  color: #2C4830;
 }
+
+.logo-header a:hover {
+  text-decoration: none;
+  color: antiquewhite;
+}
+
+.logo-header a:active {
+  text-decoration: none;
+  color: #2C4830;
+}
+

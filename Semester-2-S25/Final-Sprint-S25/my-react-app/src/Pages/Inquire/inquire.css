@@ -1,3 +1,7 @@
+.inquire-container {
+    min-height: 100dvh;
+}
+
 .inquire-header {
     display: flex;
     justify-content: center;

@@ -3,7 +3,6 @@
     justify-content: center;
     background-color: #D5E3ED;
     align-items: center;
-    gap: 1rem;
     padding: 1rem;
     padding-bottom: 10rem;
 }
@@ -12,6 +11,13 @@
     display: flex;
     max-width: 60rem;
     background-color: #D5E3ED;
+    gap: 2rem;
+    min-height: 100dvh;
+}
+
+.detail-container h1 {
+    font-family: 'Averia Serif Libre', serif;
+    font-size: 2.4rem;
 }
 
 .details-left {
@@ -31,6 +37,11 @@
 
 button {
     border-radius: 1rem;
-    font-size: 1rem;
-    max-width: 10rem;
+    font-size: 1.3rem;
+    max-width: 100%;
+    background-color: antiquewhite;
+    border-width: 0.05rem;
+    border-color: #2c4830;
+    color: #2c4830;
+    font-family: 'Averia Serif Libre', serif;
 }
