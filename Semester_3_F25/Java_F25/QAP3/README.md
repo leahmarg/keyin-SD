@@ -8,19 +8,19 @@ Assigned by: Dr. Malik
 
 # Problem #1 - Highschool Application
  
-![problem 1 terminal image](https://github.com/leahmarg/keyin-sd/Semester_3_F25/QAP3/images/problem1.png "Problem 1 Image")
+![problem 1 terminal image](https://https://github.com/leahmarg/keyin-SD/blob/main/Semester_3_F25/Java_F25/QAP3/images/problem1.png "Problem 1 Image")
 
 # Problem #2 - Diagram
 
-![problem 2 terminal image](https://github.com/leahmarg/keyin-sd/Semester_3_F25/QAP3/images/problem2.png "Problem 2 Image")
+![problem 2 terminal image](https://github.com/leahmarg/keyin-SD/blob/main/Semester_3_F25/Java_F25/QAP3/images/problem2.png "Problem 2 Image")
 
 # Problem #3 - Shapes
 
-![problem 3 terminal image](https://github.com/leahmarg/keyin-sd/Semester_3_F25/QAP3/images/problem3.png "Problem 3 Image")
+![problem 3 terminal image](https://github.com/leahmarg/keyin-SD/blob/main/Semester_3_F25/Java_F25/QAP3/images/problem3.png "Problem 3 Image")
 
 # Problem #4 - Implementation (Shapes)
 
-![problem 4 terminal image](https://github.com/leahmarg/keyin-sd/Semester_3_F25/QAP3/images/problem4.png "Problem 4 Image")
+![problem 4 terminal image](https://github.com/leahmarg/keyin-SD/blob/main/Semester_3_F25/Java_F25/QAP3/images/problem4.png "Problem 4 Image")
 
 
 ## Post-Assignment Questions
