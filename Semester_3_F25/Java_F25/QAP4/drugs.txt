@@ -1,0 +1,4 @@
+Drug ID: 1
+Drug Name: Advil
+Drug Cost: 2.99
+Dosage: 500mg
